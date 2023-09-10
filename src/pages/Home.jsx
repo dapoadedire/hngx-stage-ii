@@ -9,9 +9,7 @@ export const Home = () => {
   if (isError) return <div>Error: {error.message}</div>;
 
   return (
-    <div
-    className="grid grid-cols-1 gap-4 sm:grid-cols-2  md:grid-cols-3"
-    >
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  md:grid-cols-3">
       {data.results.slice(0, 10).map((movie) => (
         <div key={movie.id} data-testid="movie-card"
         className=""
