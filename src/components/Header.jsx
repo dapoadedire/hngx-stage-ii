@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useMovieContext } from "../context/MovieContext";
+import tv from "../assets/images/tv.svg";
+import menu from "../assets/images/menu.svg";
+import search from "../assets/images/search.svg";
+
+
 export const Header = () => {
   const [movieTitle, setMovieTitle] = useState("");
   const { movies, setMoviesData } = useMovieContext(); 
@@ -47,26 +52,63 @@ export const Header = () => {
   };
 
   return (
-    <header className="">
-      <nav className="">
-        <Link to="/" className="">
-          Movie App
-        </Link>
-      </nav>
+    <header 
+    className="absolute top-2 z-10 my-auto w-full py-8 text-white "
+    >
+     <div
+     className="mx-auto flex max-w-[1244px] items-center justify-between  px-4 "
+     >
+      <div
+      className="flex items-center space-x-3"
+      >
+        <img
+        src={tv}
+        alt="tv"
+        className="w-7"
+        />
+
+       <span
+       className="text-xl font-bold"
+       >
+         MovieBox
+       </span>
+      </div>
+   
       <div>
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleSubmit}
+        className="flex w-full items-center justify-between space-x-2 rounded-md  border bg-transparent p-2 md:w-[400px] lg:w-[500px]   "
+        >
           <input
             type="text"
-            placeholder="Search for a movie"
+            className="w-full border-none bg-transparent outline-none placeholder:text-gray-200"
+            placeholder="What do you want to watch?"
             value={movieTitle}
             onChange={(e) => setMovieTitle(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button type="submit">
+            <img src ={search} alt="search" className="w-5" />
+          </button>
         </form>
-        {loading && <p>Loading...</p>}
+        {/* {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
-        {movies && <p>Data loaded successfully!</p>}
+        {movies && <p>Data loaded successfully!</p>} */}
       </div>
+      <nav className="">
+       <ul
+       className="flex items-center space-x-6"
+       >
+          
+          <li
+          className="text-lg font-bold"
+          >
+           <a href="/" className="">Sign In</a>
+          </li>
+          <li>
+            <img src={menu} alt="menu" className="w-8" />
+          </li>
+       </ul>
+      </nav>
+     </div>
     </header>
   );
 };
