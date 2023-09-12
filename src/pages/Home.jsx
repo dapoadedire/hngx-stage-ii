@@ -7,6 +7,7 @@ import tomatoImg from "../assets/images/tomato.svg";
 import imdbImg from "../assets/images/imdb.svg";
 import play from "../assets/images/play.svg";
 import chevron_right from "../assets/images/chevron-right.svg";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
   const { movies, setMoviesData } = useMovieContext();
@@ -128,13 +129,14 @@ export const Home = () => {
               .map((movie) => <MovieCard movie={movie} key={movie.id} />)}
         </TopMovies>
       </main>
+      <Footer />
     </>
   );
 };
 
 const TopMovies = ({ children }) => {
   return (
-    <div className="relative mx-auto mt-[250px] max-w-[1244px]
+    <div className="relative mx-auto mt-[150px] max-w-[1244px]
     px-2 md:mt-[100px] lg:mt-[70px]
     ">
       <div className="mb-12 flex items-center justify-between px-2">
