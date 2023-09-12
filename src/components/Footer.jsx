@@ -5,7 +5,7 @@ export const Footer = () => {
 
     return(
         <footer
-        className=" my-8"
+        className=" my-8 border-t border-gray-400 pt-4"
         >
             <div className="mx-auto max-w-[1244px]
             flex flex-col justify-between gap-8

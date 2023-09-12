@@ -1,9 +1,9 @@
 import { useFetchMovieDetails } from "../hooks/useFetchMovieDetails";
 import { useParams } from "react-router-dom";
-
+import backdrop from "../assets/images/backdrop.jpg";
 export const Movie = () => {
     const { movieId } = useParams();
-    const { data, isLoading, isError, error } = useFetchMovieDetails(movieId);
+    const { movie, isLoading, isError, error } = useFetchMovieDetails(movieId);
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -15,22 +15,24 @@ export const Movie = () => {
         <div className="">
             <img
                 className=""
-                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                alt={data.title}
+                src = {movie.poster_path ? `https://image.tmdb.org/t/p/w500${
+          movie.poster_path
+        }` : backdrop}
+                alt={movie.title}
             />
             <div className="">
                 <h2 className=""
-                data-testid="movie-title"
-                >{data.title}</h2>
+                movie-testid="movie-title"
+                >{movie.title}</h2>
                 <p className=""
-                data-testid="movie-overview"
-                >{data.overview}</p>
+                movie-testid="movie-overview"
+                >{movie.overview}</p>
                 <p className=""
-                data-testid="movie-release-date"
-                >{data.release_date}</p>
+                movie-testid="movie-release-date"
+                >{movie.release_date}</p>
                 <p className=""
-                data-testid="movie-runtime"
-                >{data.runtime}</p>
+                movie-testid="movie-runtime"
+                >{movie.runtime}</p>
             </div>
         </div>
     );

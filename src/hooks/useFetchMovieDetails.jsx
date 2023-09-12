@@ -23,5 +23,5 @@ export const useFetchMovieDetails = (movieId) => {
       return response.json();
     },
   );
-  return { data, isLoading, isError, error };
+  return { movie:data, isLoading, isError, error };
 };

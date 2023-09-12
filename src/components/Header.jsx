@@ -4,13 +4,13 @@ import { useMovieContext } from "../context/MovieContext";
 import tv from "../assets/images/tv.svg";
 import menu from "../assets/images/menu.svg";
 import search from "../assets/images/search.svg";
-
+import { useLoadingError } from "../context/LoadingErrorContext";
 
 export const Header = () => {
   const [movieTitle, setMovieTitle] = useState("");
-  const { movies, setMoviesData } = useMovieContext(); 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const {  setMoviesData } = useMovieContext(); 
+  const { setLoading, setError } = useLoadingError();
+  
 
   const API_URL = "https://api.themoviedb.org/3";
   const TMDB_API_TOKEN = import.meta.env.VITE_TMDB_API_TOKEN;
@@ -46,10 +46,14 @@ export const Header = () => {
     }
   };
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchMovieByTitle(movieTitle);
   };
+
+
 
   return (
     <header 
@@ -91,9 +95,7 @@ export const Header = () => {
             <img src ={search} alt="search" className="w-5" />
           </button>
         </form>
-        {/* {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {movies && <p>Data loaded successfully!</p>} */}
+       
       </div>
       <nav className="">
        <ul
@@ -106,7 +108,7 @@ export const Header = () => {
 
           "
           >
-           <a href="/" className="">Sign In</a>
+           <Link to="/">Sign In</Link>
           </li>
           <li>
             <img src={menu} alt="menu" className="w-8" />

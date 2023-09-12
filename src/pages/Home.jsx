@@ -1,5 +1,5 @@
 import { Header } from "../components/Header";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { useMovieContext } from "../context/MovieContext";
 import { MovieCard } from "../components/MovieCard";
 import PosterImage from "../assets/images/poster.png";
@@ -8,12 +8,12 @@ import imdbImg from "../assets/images/imdb.svg";
 import play from "../assets/images/play.svg";
 import chevron_right from "../assets/images/chevron-right.svg";
 import { Footer } from "../components/Footer";
+import { useLoadingError } from "../context/LoadingErrorContext";
 
 export const Home = () => {
   const { movies, setMoviesData } = useMovieContext();
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { loading, setLoading, error, setError } = useLoadingError();
 
   const API_URL =
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
@@ -47,7 +47,7 @@ export const Home = () => {
     fetchMovies();
   }, []);
 
-  console.log(movies);
+ 
 
   return (
     <>
@@ -119,15 +119,22 @@ export const Home = () => {
           </div>
         </div>
 
-        <div>{loading && <p>Loading...</p>}</div>
-
-        <div>{error && <p>Error: {error}</p>}</div>
-        <TopMovies>
-          {movies &&
-            movies.results
-              .slice(0, 10)
-              .map((movie) => <MovieCard movie={movie} key={movie.id} />)}
-        </TopMovies>
+        
+       <div>
+      {
+        loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          <TopMovies>
+             {movies && movies.results.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
+          </TopMovies>
+        )
+      }
+       </div>
       </main>
       <Footer />
     </>
@@ -136,8 +143,8 @@ export const Home = () => {
 
 const TopMovies = ({ children }) => {
   return (
-    <div className="relative mx-auto md:mt-8 max-w-[1244px] 
-    px-2 
+    <div className="relative mx-auto max-w-[1244px] px-2 
+    md:mt-8 
     ">
       <div className="mb-12 flex items-center justify-between px-2">
         <h1
