@@ -65,14 +65,14 @@ export const Home = () => {
           <img
             className="
               
-              h-screen w-screen object-cover md:h-full 
+              h-5/6 w-screen object-cover md:h-full 
               
               "
             src={PosterImage}
             alt="poster"
           />
 
-          <div className="absolute  top-[8em] flex h-full w-screen items-center  text-white  md:top-[1em] ">
+          <div className="absolute  top-[2em] flex h-5/6 w-full items-center text-white  md:top-[1em]  md:h-full ">
            
            
             <div className=" mx-auto flex w-full max-w-[1244px] items-center justify-between px-4 ">
@@ -136,8 +136,8 @@ export const Home = () => {
 
 const TopMovies = ({ children }) => {
   return (
-    <div className="relative mx-auto mt-[150px] max-w-[1244px]
-    px-2 md:mt-[100px] lg:mt-[70px]
+    <div className="relative mx-auto mt-8 max-w-[1244px]
+    px-2 
     ">
       <div className="mb-12 flex items-center justify-between px-2">
         <h1
@@ -161,7 +161,7 @@ const TopMovies = ({ children }) => {
         </p>
       </div>
       <div
-        className="mx-auto grid max-w-[1244px] grid-cols-1  justify-items-center 
+        className="mx-auto grid max-w-[1244px] grid-cols-2  justify-items-center 
           gap-4 gap-y-8  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
           
           "

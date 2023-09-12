@@ -9,7 +9,7 @@ export const MovieCard = ({ movie }) => {
    <div
       key={movie.id}
       data-testid="movie-card"
-      className=" relative flex w-[250px] flex-col justify-center gap-4"
+      className=" relative flex md:w-[250px] flex-col justify-center gap-4 w-[150px]"
     >
       <div
       className="absolute right-1 top-1 p-2 bg-red-100 rounded-full cursor-pointer
