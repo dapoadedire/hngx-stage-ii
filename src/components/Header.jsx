@@ -59,16 +59,18 @@ export const Header = () => {
      className="mx-auto flex max-w-[1244px] items-center justify-between  px-4 "
      >
       <div
-      className="flex items-center space-x-3"
+      className="flex items-center space-x-2 mr-3"
       >
         <img
         src={tv}
         alt="tv"
-        className="w-7"
+        className="w-5 md:w-6"
         />
 
        <span
-       className="text-xl font-bold"
+       className=" font-bold
+       text-sm md:text-2xl
+       "
        >
          MovieBox
        </span>
@@ -95,11 +97,14 @@ export const Header = () => {
       </div>
       <nav className="">
        <ul
-       className="flex items-center space-x-6"
+       className="flex items-center space-x-3 md:space-x-4"
        >
           
           <li
-          className="text-lg font-bold"
+          className="text-lg font-bold
+          hidden md:block
+
+          "
           >
            <a href="/" className="">Sign In</a>
           </li>

@@ -136,7 +136,7 @@ export const Home = () => {
 
 const TopMovies = ({ children }) => {
   return (
-    <div className="relative mx-auto mt-8 max-w-[1244px]
+    <div className="relative mx-auto md:mt-8 max-w-[1244px] 
     px-2 
     ">
       <div className="mb-12 flex items-center justify-between px-2">
