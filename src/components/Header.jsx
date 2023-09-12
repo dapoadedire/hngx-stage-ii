@@ -17,7 +17,9 @@ export const Header = () => {
 
 
   const fetchMovieByTitle = async (movieTitle) => {
+    
     setLoading(true);
+
     try {
       const options = {
         method: "GET",
@@ -57,7 +59,7 @@ export const Header = () => {
 
   return (
     <header 
-    className="absolute top-2 z-10 my-auto w-full py-8 text-white "
+    className="absolute top-2 z-10 my-auto w-full py-2 md:py-4  text-white "
     >
      <div
      className="mx-auto flex max-w-[1244px] items-center justify-between  px-4 "

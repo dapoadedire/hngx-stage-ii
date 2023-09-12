@@ -9,7 +9,7 @@ import play from "../assets/images/play.svg";
 import chevron_right from "../assets/images/chevron-right.svg";
 import { Footer } from "../components/Footer";
 import { useLoadingError } from "../context/LoadingErrorContext";
-
+import { Loading } from "../components/Loading";
 export const Home = () => {
   const { movies, setMoviesData } = useMovieContext();
 
@@ -123,7 +123,7 @@ export const Home = () => {
        <div>
       {
         loading ? (
-          <div>Loading...</div>
+          <Loading />
         ) : error ? (
           <div>Error: {error.message}</div>
         ) : (
