@@ -5,7 +5,7 @@ export const Footer = () => {
 
     return(
         <footer
-        className=" my-8 border-t border-gray-400 pt-4"
+        className=" my-8  p-4"
         >
             <div className="mx-auto max-w-[1244px]
             flex flex-col justify-between gap-8
@@ -14,32 +14,34 @@ export const Footer = () => {
             className=" flex justify-center gap-4
             "
             >
-                <FaFacebook className="h-6 w-6"/>
-                <FaInstagram className="h-6 w-6"/>
-                <FaTwitter className="h-6 w-6"/>
-                <FaYoutube className="h-6 w-6"/>
+                <FaFacebook className="h-6 w-6 cursor-pointer"/>
+                <FaInstagram className="h-6 w-6 cursor-pointer"/>
+                <FaTwitter className="h-6 w-6 cursor-pointer"/>
+                <FaYoutube className="h-6 w-6 cursor-pointer"/>
             </section>
             <section
             className=" flex justify-center gap-4 flex-col md:flex-row
             text-center md:text-left
             "
             >
-                <p>
+                <a href="/">
                     Conditions of Use
 
-                </p>
-                <p>
+                </a>
+                <a href="/">
                     Privacy & Policy
-                </p>
-                <p>
+                </a>
+                <a href="/">
                     Press Room
-                </p>
+                </a>
                
             </section>
             <section
             className=" flex justify-center gap-4"
             >
-            <p>
+            <p
+            className="text-center text-gray-600"
+            >
                     &copy; {year} Movie App MovieBox by Adriana Eka Prayudha
                 </p>
             </section>

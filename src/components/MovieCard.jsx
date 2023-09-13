@@ -9,7 +9,7 @@ export const MovieCard = ({ movie }) => {
       <div
         key={movie.id}
         data-testid="movie-card"
-        className="  flex md:w-[250px] flex-col justify-center gap-4 w-[150px]"
+        className="  flex md:w-[250px] flex-col justify-start gap-4 w-[165px]"
       >
         <div className="relative">
           <div
@@ -43,12 +43,19 @@ export const MovieCard = ({ movie }) => {
           className="text-[13px] text-gray-500 mb-2"
           data-testid="movie-release-date">{movie.release_date}</p>
       
-            <h2 data-testid="movie-title" className="mb-2 text-lg font-bold">
+            <h2 data-testid="movie-title" className="
+            font-medium
+            mb-2 text-lg md:font-bold">
               {movie.title}
             </h2>
           </Link>
          
-         
+        { movie.genres && movie.genres.map((genre, index) => (
+                    <span key={genre.id}>
+                      {genre.name}
+                      {index !== movie.genres.length - 1 ? ", " : ""}
+                    </span>
+                  ))}
            </div>
       </div>
     </>

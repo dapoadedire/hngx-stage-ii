@@ -63,11 +63,7 @@ export const Home = () => {
           <Header />
 
           <img
-            className="
-              
-              h-5/6 w-screen object-cover md:h-full 
-              
-              "
+            className="h-5/6 w-screen object-cover md:h-full"
             src={PosterImage}
             alt="poster"
           />
@@ -169,7 +165,7 @@ const TopMovies = ({ children }) => {
       </div>
       <div
         className="mx-auto grid max-w-[1244px] grid-cols-2  justify-items-center 
-          gap-4 gap-y-8  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+          gap-2 gap-y-10 sm:grid-cols-2  md:grid-cols-3 md:gap-x-4 lg:grid-cols-4
           
           "
       >
