@@ -2,7 +2,6 @@ import { Header } from "../components/Header";
 import {  useEffect } from "react";
 import { useMovieContext } from "../context/MovieContext";
 import { MovieCard } from "../components/MovieCard";
-import PosterImage from "../assets/images/poster.png";
 import tomatoImg from "../assets/images/tomato.svg";
 import imdbImg from "../assets/images/imdb.svg";
 import play from "../assets/images/play.svg";

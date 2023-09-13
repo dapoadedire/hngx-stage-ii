@@ -44,7 +44,7 @@ export const MovieCard = ({ movie }) => {
           data-testid="movie-release-date">{movie.release_date}</p>
       
             <h2 data-testid="movie-title" className="
-            mb-2
+            
             text-lg font-medium md:font-bold">
               {movie.title}
             </h2>

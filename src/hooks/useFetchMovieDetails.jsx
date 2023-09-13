@@ -18,7 +18,7 @@ export const useFetchMovieDetails = (movieId) => {
         options,
       );
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error(`${response.status}`)
       }
       return response.json();
     },
