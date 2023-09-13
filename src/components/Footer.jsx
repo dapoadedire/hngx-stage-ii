@@ -40,7 +40,7 @@ export const Footer = () => {
             className=" flex justify-center gap-4"
             >
             <p>
-                    &copy; {year} Movie App
+                    &copy; {year} Movie App MovieBox by Adriana Eka Prayudha
                 </p>
             </section>
             </div>
