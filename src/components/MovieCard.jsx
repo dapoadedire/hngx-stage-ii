@@ -11,44 +11,45 @@ export const MovieCard = ({ movie }) => {
         data-testid="movie-card"
         className="  flex md:w-[250px] flex-col justify-center gap-4 w-[150px]"
       >
-        
-        <div
-        className="relative"
-        >
-        <div
-          className="absolute right-1 top-1 p-2 bg-red-100 rounded-full cursor-pointer
+        <div className="relative">
+          <div
+            className="absolute right-1 top-1 p-2 bg-red-100 rounded-full cursor-pointer
     bg-opacity-50 border border-red-500 hover:bg-opacity-100
       "
-        >
-          <FaRegHeart
-            className="h-5 w-5 text-red-500
+          >
+            <FaRegHeart
+              className="h-5 w-5 text-red-500
        
         "
-            onClick={() =>
-              toast.success(`Added ${movie.title} to your favorites`)
+              onClick={() =>
+                toast.success(`Added ${movie.title} to your favorites`)
+              }
+            />
+          </div>
+          <img
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : backdrop
             }
+            alt={movie.title}
+            data-testid="movie-poster"
+            className="w-full"
           />
-        </div>
-        <img
-         
-         src={
-           movie.poster_path
-             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-             : backdrop
-         }
-         alt={movie.title}
-         data-testid="movie-poster"
-         className="w-full"
-       />
         </div>
         <div>
           <Link to={`/movies/${movie.id}`}>
+          <p
+          className="text-[13px] text-gray-500 mb-2"
+          data-testid="movie-release-date">{movie.release_date}</p>
+      
             <h2 data-testid="movie-title" className="mb-2 text-lg font-bold">
               {movie.title}
             </h2>
           </Link>
-          <p data-testid="movie-release-date">{movie.release_date}</p>
-        </div>
+         
+         
+           </div>
       </div>
     </>
   );
