@@ -179,7 +179,7 @@ export const Home = () => {
           <div>Error: {error.message}</div>
         ) : (
           <TopMovies>
-             {movies && movies.results.map((movie) => (
+             {movies && movies.results.slice(0, 10).map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
           </TopMovies>
