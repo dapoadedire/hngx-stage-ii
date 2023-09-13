@@ -52,10 +52,15 @@ The application should now be running at <http://localhost:5173>
 
 **Server:** TMDB API
 
-## Demo
-
-Insert gif or link to demo
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![image](https://github.com/dapoadedire/hngx-stage-ii/assets/95668340/1bb30308-ef6e-4285-946b-322e1422337d)
+
+![image](https://github.com/dapoadedire/hngx-stage-ii/assets/95668340/726ac337-f89e-47ec-a37f-81f39bc249b0)
+
+![image](https://github.com/dapoadedire/hngx-stage-ii/assets/95668340/a345a50b-807d-4c30-a554-ba7858a1ec6e)
+
+![image](https://github.com/dapoadedire/hngx-stage-ii/assets/95668340/022aeb3a-caac-4be2-8a1f-439926a6611d)
+
+
