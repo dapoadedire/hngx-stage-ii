@@ -10,6 +10,7 @@ import chevron_right from "../assets/images/chevron-right.svg";
 import { Footer } from "../components/Footer";
 import { useLoadingError } from "../context/LoadingErrorContext";
 import { Loading } from "../components/Loading";
+import { Link } from "react-router-dom";
 export const Home = () => {
   const { movies, setMoviesData } = useMovieContext();
 
@@ -84,15 +85,18 @@ export const Home = () => {
         
         h-[650px]
         w-full bg-[#494848]
-        md:min-h-[600px]
-        
-        "
+        md:min-h-[600px]"
         >
+          <div
+          className="absolute top-0 left-0 w-full h-full bg-black/60 "
+          >
+
+          </div>
           <Header />
 
           <img
             className=" w-screen object-cover h-full md:h-full
-            
+            z-[-1]
             "
             src={`https://image.tmdb.org/t/p/w500${randomMovie && randomMovie[0].backdrop_path}`}
             alt="poster"
@@ -141,6 +145,8 @@ export const Home = () => {
                     movie.overview
                    }
                   </p>
+
+                  <Link to={`/movies/${movie.id}`}>
                   <button className="flex  items-center justify-center gap-2
                   rounded-md  bg-[#BE123C] px-4 py-2
                   ">
@@ -152,9 +158,12 @@ export const Home = () => {
                       alt="play" />
                     <span className="text-[12px] md:text-[14px] ">
                       
-                      WATCH TRAILER
+                    
+                     WATCH TRAILER
+                     
                     </span>
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>
