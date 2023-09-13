@@ -24,8 +24,12 @@ npm install
 
 ```
 
-4. Create a .env file at the root of the project and add your TMDb API TOKEN as - VITE_API_TOKEN=<your_api_token>
+4. Create a .env file at the root of the project and add your TMDb API TOKEN as 
 
+```
+VITE_API_TOKEN=<your_api_token>
+```
+You can get it at <https://developer.themoviedb.org/reference/intro/authentication>
 
 5. Start the development server: 
 

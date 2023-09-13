@@ -2,20 +2,21 @@ import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { toast } from "sonner";
 import backdrop from "../assets/images/backdrop.jpg";
-
+import { getGenreName } from "../utils";
 export const MovieCard = ({ movie }) => {
+  console.log(movie);
   return (
     <>
       <div
         key={movie.id}
         data-testid="movie-card"
-        className="  flex md:w-[250px] flex-col justify-start gap-4 w-[165px]"
+        className="  flex w-[165px] flex-col justify-start gap-4 md:w-[250px]"
       >
         <div className="relative">
           <div
-            className="absolute right-1 top-1 p-2 bg-red-100 rounded-full cursor-pointer
-    bg-opacity-50 border border-red-500 hover:bg-opacity-100
-      "
+                    className="absolute right-1 top-1 cursor-pointer rounded-full border border-red-300
+            bg-red-100/50 p-2 hover:bg-red-100/100
+              "
           >
             <FaRegHeart
               className="h-5 w-5 text-red-500
@@ -40,24 +41,37 @@ export const MovieCard = ({ movie }) => {
         <div>
           <Link to={`/movies/${movie.id}`}>
           <p
-          className="text-[13px] text-gray-500 mb-2"
+          className="mb-2 text-[13px] text-gray-500"
           data-testid="movie-release-date">{movie.release_date}</p>
       
             <h2 data-testid="movie-title" className="
-            font-medium
-            mb-2 text-lg md:font-bold">
+            mb-2
+            text-lg font-medium md:font-bold">
               {movie.title}
             </h2>
           </Link>
          
-        { movie.genres && movie.genres.map((genre, index) => (
-                    <span key={genre.id}>
-                      {genre.name}
-                      {index !== movie.genres.length - 1 ? ", " : ""}
-                    </span>
-                  ))}
+       <p
+       className=""
+       >
+      {
+        movie.genre_ids.map((genre, index) => (
+          <span
+          key={genre}
+          className="mr-2 text-sm text-gray-600"
+          >
+            {getGenreName(genre)}
+            {index !== movie.genre_ids.length - 1 ? ", " : ""}
+          </span>
+        ))
+
+      }
+       </p>
            </div>
       </div>
     </>
   );
 };
+
+
+

@@ -7,8 +7,8 @@ export const Footer = () => {
         <footer
         className=" my-8  p-4"
         >
-            <div className="mx-auto max-w-[1244px]
-            flex flex-col justify-between gap-8
+            <div className="mx-auto flex
+            max-w-[1244px] flex-col justify-between gap-8
             ">
             <section
             className=" flex justify-center gap-4
@@ -20,8 +20,8 @@ export const Footer = () => {
                 <FaYoutube className="h-6 w-6 cursor-pointer"/>
             </section>
             <section
-            className=" flex justify-center gap-4 flex-col md:flex-row
-            text-center md:text-left
+            className=" flex flex-col justify-center gap-4 text-center
+            md:flex-row md:text-left
             "
             >
                 <a href="/">
