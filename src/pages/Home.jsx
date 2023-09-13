@@ -80,15 +80,18 @@ export const Home = () => {
         <div
           className="
         relative
+        
+        
         h-[650px]
-        w-full md:min-h-[600px]
-        bg-[#494848]
+        w-full bg-[#494848]
+        md:min-h-[600px]
+        
         "
         >
           <Header />
 
           <img
-            className="h-5/6 w-screen object-cover md:h-full
+            className=" w-screen object-cover h-full md:h-full
             
             "
             src={`https://image.tmdb.org/t/p/w500${randomMovie && randomMovie[0].backdrop_path}`}
@@ -102,10 +105,10 @@ export const Home = () => {
 
               <div 
               key={movie}
-              className="absolute  top-[2em] flex h-5/6 w-full items-center text-white  md:top-[1em]  md:h-full ">
+              className="absolute  top-[2em] flex h-5/6 w-full items-center text-white md:top-[1em]  md:h-full ">
            
            
-              <div className=" mx-auto flex w-full max-w-[1244px] items-center justify-between px-4 ">
+              <div className=" mx-auto flex  w-full max-w-[1244px] items-center justify-between px-4 ">
                 <div className=" flex h-auto w-full flex-col items-start justify-start gap-[16px] md:w-[450px] ">
                   <h1 className="text-2xl font-medium leading-[56px]  md:text-4xl">
                     {movie.title}
@@ -184,7 +187,7 @@ export const Home = () => {
 const TopMovies = ({ children }) => {
   return (
     <div className="relative mx-auto max-w-[1244px] px-2 
-    md:mt-8 
+    md:mt-8  mt-4
     ">
       <div className="mb-12 flex items-center justify-between px-2">
         <h1
