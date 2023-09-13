@@ -4,7 +4,6 @@ import { toast } from "sonner";
 import backdrop from "../assets/images/backdrop.jpg";
 import { getGenreName } from "../utils";
 export const MovieCard = ({ movie }) => {
-  console.log(movie);
   return (
     <>
       <div
