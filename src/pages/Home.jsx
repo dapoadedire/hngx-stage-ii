@@ -19,30 +19,10 @@ export const Home = () => {
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
 
   const TMDB_API_TOKEN = import.meta.env.VITE_TMDB_API_TOKEN;
+  
+  const randomMovie = movies && [...movies.results].sort(() => Math.random() - Math.random()).slice(0, 1);
 
-  const randomMovie = movies && movies.results.sort(() => Math.random() - Math.random()).slice(0, 1);
 
-// const randomMovie=  [
-//     {
-//         "adult": false,
-//         "backdrop_path": "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
-//         "genre_ids": [
-//             18,
-//             80
-//         ],
-//         "id": 238,
-//         "original_language": "en",
-//         "original_title": "The Godfather",
-//         "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
-//         "popularity": 121.111,
-//         "poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
-//         "release_date": "1972-03-14",
-//         "title": "The Godfather",
-//         "video": false,
-//         "vote_average": 8.7,
-//         "vote_count": 18610
-//     }
-// ]
 
   const fetchMovies = async () => {
     try {
@@ -179,7 +159,7 @@ export const Home = () => {
           <div>Error: {error.message}</div>
         ) : (
           <TopMovies>
-             {movies && movies.results.slice(0, 10).map((movie) => (
+             {movies && movies.results.map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
           </TopMovies>
