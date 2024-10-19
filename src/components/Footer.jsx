@@ -42,7 +42,7 @@ export const Footer = () => {
             <p
             className="text-center text-gray-600"
             >
-                    &copy; {year} Movie App MovieBox by Adriana Eka Prayudha
+                    &copy; {year} Movie App 
                 </p>
             </section>
             </div>
